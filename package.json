@@ -1,0 +1,12 @@
+{
+  "name": "unit-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/Main.js",
+  "scripts": {
+    "test": "tsc && node test"
+  },
+  "author": "FallingShrimp",
+  "license": "ISC",
+  "types": "src/Main.ts"
+}
