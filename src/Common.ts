@@ -1,13 +1,13 @@
 import { AnyObject, PresetVM } from "./DataStruct";
-export function getGlobalNamespace(): AnyObject {
+export function getGlobalNamespace(): AnyObject<any> {
     return globalThis as AnyObject<any>;
 };
 export function getGlobalVar<T = AnyObject>(name: string): T {
     return getGlobalNamespace()[name] as T;
 };
-export type IsEqual<T, U, A, B> = (<G>() => G extends T ? 1 : 2) extends (<G>() => G extends U ? 1 : 2) ? A : B;
-export function exposeToMainWorld(data: any, name: string): void {
+export function exposeToMainWorld<T extends {}>(data: T, name: string): T {
     getGlobalNamespace()[name] = data;
+    return data;
 };
 export function getAutoVM(): PresetVM {
     return getGlobalVar("AutoVM");

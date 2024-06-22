@@ -1,7 +1,7 @@
 import { exposeToMainWorld } from "./Common";
 import { ValueType } from "./DataStruct";
 import { createUnit, readUnit } from "./Unit";
-exposeToMainWorld({
+export const AutoVM = exposeToMainWorld({
     time: createUnit(["h", "m", "s"], ValueType.NUMBER, 60),
     distance: createUnit(["km", "hm", "tm", "m", "dm", "cm", "mm", "um", "nm"], ValueType.NUMBER, 10),
     velocity: createUnit("auto", ValueType.RATIO, {
